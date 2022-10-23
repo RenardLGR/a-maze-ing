@@ -1,0 +1,21 @@
+<%- include('partials/header') -%>
+    <section class="board">
+        <table class="size-med" data-size="med">
+            <tbody>
+                <% for(let i=0 ; i<14 ; i++){ %>
+                    <tr class="table-row <%= i %>">
+                        <% for(let j=0 ; j<14 ; j++){ %>
+                            <td class=<%= `cell ${i}-${j}`%> id=<%=`${i}-${j}`%>></td>
+                        <% } %>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </section>
+
+    <br>
+    <br>
+    <div class="text-center">
+        <button class="btn btn-primary" id="save-maze">Save maze</button>
+    </div>  
+<%- include('partials/footer') -%>

@@ -1,0 +1,28 @@
+nav {
+  height: 100px;
+}
+
+section.board {
+  width: 700px;
+  margin: 0 auto;
+  /* border: 1px solid #2d2d2d; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  /* height: 40%; */
+  padding: 12px;
+  display: inline-block;
+}
+
+.cell {
+  border: 2px solid blue;
+  height: 50px;
+  width: 50px;
+}
+
+.cell.wall {
+  background-color: rgb(44 131 169);
+}
