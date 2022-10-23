@@ -1,20 +1,11 @@
 <%- include('partials/header') -%>
-    <div>
-        <%= maze.value %>
-    </div>
     <section class="board">
         <table class="size-med" data-size="med">
             <tbody>
-                <% let cellIdx=3 %>
                 <% for(let i=0 ; i<14 ; i++){ %>
                     <tr class="table-row <%= i %>">
                         <% for(let j=0 ; j<14 ; j++){ %>
-                            <% if(maze.value[cellIdx] === 'w') { %>
-                                <td class="cell wall <%=`${i}-${j}`%>" id=<%=`${i}-${j}`%>></td>
-                            <% }else{ %>
-                                <td class= "cell <%=`${i}-${j}`%>" id=<%=`${i}-${j}`%>></td>
-                            <% } %>
-                            <% cellIdx++ %>
+                            <td class=<%= `cell ${i}-${j}`%> id=<%=`${i}-${j}`%>></td>
                         <% } %>
                     </tr>
                 <% } %>
