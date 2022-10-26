@@ -1,3 +1,5 @@
+//This file serves both newmaze.ejs and maze.ejs
+
 const cells = document.querySelectorAll('.cell')
 let cellsArray = Array.from(cells)
 cellsArray.forEach(c => {
@@ -25,19 +27,23 @@ async function saveMaze(){
 
     let boardValue = size + cellValues.join('')
 
+    let title = document.querySelector('#maze-title').value
+
     try{
         const newBoard = await fetch('/maze/addMaze', {
             method: 'post',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
                 'boardSize': size,
-                'boardValues': boardValue
+                'boardValues': boardValue,
+                'title' : title
             })
         })
         const data = await newBoard.json()
         console.log(data)
-
-        location.reload()
+        let newBoardId = data._id
+        location.replace('/maze/'+newBoardId)
+        //location.reload()
     }catch(err){
         console.log(err)
     }

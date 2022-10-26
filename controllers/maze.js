@@ -19,14 +19,19 @@ module.exports = {
     createMaze: async (req, res) => {
         const mazeSize = req.body.boardSize
         const mazeValues = req.body.boardValues
+        const mazeTitle = req.body.title
         try{
-            await Maze.create({
-                title: 'temptitle',
+            let newMaze = await Maze.create({
+                title: mazeTitle,
                 caption: 'tempcaption',
                 user: req.user.id,
                 size: mazeSize,
                 value:mazeValues
             });
+            // console.log(newMaze)
+            // let newMazeId = newMaze._id
+            // res.redirect('/maze/'+newMazeId)
+            res.send(newMaze)
         }catch(err){
             console.log(err)
         }

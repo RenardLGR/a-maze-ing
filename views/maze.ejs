@@ -2,6 +2,9 @@
     <div>
         <%= maze.value %>
     </div>
+    <section class="text-center">
+        <h2 class="my-3"><%= maze.title %></h2>
+    </section>
     <section class="board">
         <table class="size-med" data-size="med">
             <tbody>
@@ -25,6 +28,6 @@
     <br>
     <br>
     <div class="text-center">
-        <button class="btn btn-primary" id="save-maze">Save maze</button>
+        <button class="btn btn-primary" id="edit-maze">Edit maze</button>
     </div>  
 <%- include('partials/mazefooter') -%>
